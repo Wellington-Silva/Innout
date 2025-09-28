@@ -22,7 +22,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" autofocus >
+                    <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" placeholder="Digite seu e-mail" autofocus >
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-lg btn-primary" type="button">Entrar</button>
+                <button class="btn btn-lg btn-primary">Entrar</button>
             </div>
         </div>
     </form>
