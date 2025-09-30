@@ -1,15 +1,25 @@
 <?php 
 loadModel('Login');
 
+$exception = null;
+$email = '';
+
 if (count($_POST) > 0) {
     $login = new Login($_POST);
+    $email = $_POST['email']; // pra manter o campo preenchido
+
     try {
         $user = $login->checkLogin();
-        echo "Usuário {$user->name} logado com sucesso!";
+
+        header('Location: ' . BASE_URL . '/day_records');
+    } catch (ValidationException $e) {
+        $exception = $e;
     } catch (Exception $e) {
-        echo 'Falha no Login';
+        $exception = $e;
     }
 }
 
-loadView('login', $_POST);
-
+loadView('login', [
+    'exception' => $exception,
+    'email' => $email
+]);

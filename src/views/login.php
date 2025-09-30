@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
+
 <body>
     <form class="form-login" action="#" method="post">
         <div class="login-card card">
@@ -20,13 +22,32 @@
                 <i class="icofont-runner-alt-1 ml-2"></i>
             </div>
             <div class="card-body">
+                <?php include(TEMPLATES_PATH . '/messages.php') ?>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" placeholder="Digite seu e-mail" autofocus >
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control <?= $exception && $errors['email'] ? 'is-invalid' : '' ?>"
+                        value="<?= $email ?? '' ?>"
+                        placeholder="Digite seu e-mail" autofocus>
+                    <div class="invalid-feedback">
+                        <?= $exception ? $errors['email'] : '' ?>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite a senha" autofocus >
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control <?= $exception && $errors['password'] ? 'is-invalid' : '' ?>"
+                        placeholder="Digite a senha">
+                    <div class="invalid-feedback">
+                        <?= $exception ? $errors['password'] : '' ?>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
@@ -35,4 +56,5 @@
         </div>
     </form>
 </body>
+
 </html>
