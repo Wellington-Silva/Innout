@@ -38,17 +38,107 @@ header.header .logo {
     color: white;
     font-size: 2rem;
     flex-basis: 250px;
-    height: 64px;
+    height: 100%;
 }
 
 header.header .menu-toggle {
     color: white;
     cursor: pointer;
-    
+}
+
+header.header .spacer {
+    flex: 1;
+}
+
+header.header .dropdown {
+    position: relative;
+
+}
+
+header.header .dropdown-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+}
+
+header.header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    min-width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px 0px;
+    z-index: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0; 
+}
+
+header.header .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header.header .dropdown-content ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+header.header .dropdown-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    padding: 7px;
+    font-size: 1.1rem;
+}
+
+header.header .dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+header.header .dropdown:hover {
+    background-color: rgba(0, 0, 0, .1);
 }
 
 aside.side-bar {
-    grid-area: sidebar;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: sidebar;
+    box-shadow: -5px 0px 25px 1px rgba(0,0,0,.4);
+    background-color: #FFF;
+    
+}
+
+aside.side-bar .menu {
+    width: 100%;
+    flex: 1;
+}
+
+aside.side-bar .menu .nav-list { 
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+aside.side-bar .menu .nav-item { 
+    margin: 0px;
+    padding: 10px 10px 10px 25px;
+}
+
+aside.side-bar .menu .nav-item:hover { 
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+aside.side-bar .menu .nav-item a { 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
 }
 
 .hide-sidebar aside.sidebar {
