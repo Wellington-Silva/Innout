@@ -15,7 +15,7 @@ $uri = trim($uri, '/');
 
 
 if ($uri === '') {
-    $uri = 'login';
+    $uri = 'day_records';
 }
 
 // Converte para PascalCase se tiver underscores

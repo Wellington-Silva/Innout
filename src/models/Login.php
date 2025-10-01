@@ -1,5 +1,4 @@
-<?php 
-loadModel('User');
+<?php
 
 class Login extends Model {
 

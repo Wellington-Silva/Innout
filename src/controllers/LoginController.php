@@ -1,6 +1,8 @@
 <?php 
 loadModel('Login');
 
+session_start();
+
 $exception = null;
 $email = '';
 
@@ -10,8 +12,9 @@ if (count($_POST) > 0) {
 
     try {
         $user = $login->checkLogin();
-
+        $_SESSION['user'] = $user;
         header('Location: ' . BASE_URL . '/day_records');
+        exit();
     } catch (ValidationException $e) {
         $exception = $e;
     } catch (Exception $e) {
