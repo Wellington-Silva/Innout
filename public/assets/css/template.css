@@ -110,8 +110,7 @@ aside.side-bar {
     align-items: center;
     grid-area: sidebar;
     box-shadow: -5px 0px 25px 1px rgba(0,0,0,.4);
-    background-color: #FFF;
-    
+    background-color: #FFF; 
 }
 
 aside.side-bar .menu {
@@ -141,8 +140,9 @@ aside.side-bar .menu .nav-item a {
     color: #333;
 }
 
-.hide-sidebar aside.sidebar {
+.hide-sidebar aside.side-bar {
     display: none;
+    grid-area: unset !important;
 }
 
 main.content {
@@ -150,5 +150,12 @@ main.content {
 }
 
 footer.footer {
+    display: flex;
+    background-color: #222;
+    color: #FFF;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px; 
+    font-size: 1.2rem;
     grid-area: footer;
 }
