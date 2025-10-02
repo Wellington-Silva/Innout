@@ -28,3 +28,8 @@ function loadTemplateView($viewName,  $params = array()) {
     require_once(VIEW_PATH . "/{$viewName}.php");
     require_once(TEMPLATES_PATH . "/footer.php");
 }
+
+function render($title, $subtitle, $icon = null) {
+    require_once(TEMPLATES_PATH . "/title.php");
+    
+}
