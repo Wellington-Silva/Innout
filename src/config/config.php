@@ -13,6 +13,9 @@ setlocale(LC_TIME, 'pt_BR', 'pt_BR.UTF-8', 'portuguese');
 
 $srcPath = dirname(__FILE__, 2);
 
+// Constants
+define('DAYLE_TIME', 60 * 60 * 8); // 8 hours in seconds
+
 // Folders
 define('MODEL_PATH', $srcPath . '/models');
 define('VIEW_PATH', $srcPath . '/views');
