@@ -1,4 +1,6 @@
-#IN N' OUT
+# IN N' OUT
+
+Sistema de bater ponto eletrônico.
 
 ### Tela de Login
 <img src="./public/assets/images/Login.png" alt="Texto Alternativo">
