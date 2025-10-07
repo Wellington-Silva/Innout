@@ -31,14 +31,16 @@ class Model
         $this->values[$key] = $value;
     }
 
-    public static function getOne($filters = [], $columns = '*') {
+    public static function getOne($filters = [], $columns = '*')
+    {
         $class = get_called_class();
-        
+
         $result = static::getResultSetFromSelect($filters, $columns);
-        return $result ? new $class($result->fetch_assoc()) : null; 
+        return $result ? new $class($result->fetch_assoc()) : null;
     }
 
-    public static function get($filters = [], $columns = '*') {
+    public static function get($filters = [], $columns = '*')
+    {
         $objects = [];
         $result = static::getResultSetFromSelect($filters, $columns);
         if ($result) {
@@ -53,8 +55,8 @@ class Model
     public static function getResultSetFromSelect($filters = [], $columns = '*')
     {
         $sql = "SELECT " . $columns . " FROM "
-            .static::$tableName
-            .static::getFilters($filters);
+            . static::$tableName
+            . static::getFilters($filters);
 
         $result = Database::getResultFromQuery($sql);
         if ($result->num_rows === 0) {
@@ -64,7 +66,8 @@ class Model
         }
     }
 
-    public static function getFilters($filters) {
+    public static function getFilters($filters)
+    {
         $sql = '';
         if (count($filters) > 0) {
             $sql .= " WHERE 1 = 1";
@@ -76,7 +79,8 @@ class Model
         return $sql;
     }
 
-    private static function getFomartedValue($value) {
+    private static function getFomartedValue($value)
+    {
         if (is_null($value)) {
             return "null";
         } elseif (gettype($value) === "string") {
@@ -84,5 +88,28 @@ class Model
         } else {
             return $value;
         }
+    }
+
+    public function insert()
+    {
+        $sql = "INSERT INTO " . static::$tableName . " ("
+            . implode(",", static::$columns) . ") VALUES (";
+        foreach (static::$columns as $col) {
+            $sql .= static::getFomartedValue($this->$col) . ",";
+        }
+        $sql[strlen($sql) - 1] = ")";
+        $id = Database::executeSQL($sql);
+        $this->id = $id;
+        return $id;
+    }
+
+    public function update() {
+        $sql = "UPDATE " . static::$tableName . " SET ";
+        foreach(static::$columns as $col) {
+            $sql .= " {$col} = " . static::getFomartedValue($this->$col) . ",";
+        }
+        $sql[strlen($sql) - 1] = " ";
+        $sql .= "WHERE id = {$this->id}";
+        Database::executeSQL($sql);
     }
 }

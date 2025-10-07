@@ -18,6 +18,11 @@ if ($uri === '') {
     $uri = 'day_records';
 }
 
+// Para evitar que o nome final fique duplicado
+if (substr($uri, -10) === 'Controller') { // 'Controller' tem 10 caracteres
+    $uri = substr($uri, 0, -10);
+}
+
 // Converte para PascalCase se tiver underscores
 $controllerBaseName = str_replace(' ', '', ucwords(str_replace('_', ' ', $uri)));
 
