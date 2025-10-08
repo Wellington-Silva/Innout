@@ -30,12 +30,12 @@ Certifique-se de ter instalado em seu ambiente:
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
-cd in-n-out
+git clone https://github.com/Wellington-Silva/Innout.git
+cd innout
 ```
 
 ### 2. Configurar o Banco de Dados
-Crie um novo banco de dados (ex: innout_db) e execute os comandos SQL abaixo para criar as tabelas users e records.
+Crie um novo banco de dados (ex: innout) e execute os comandos SQL abaixo para criar as tabelas users e records.
 
 -- Estrutura da Tabela: users
 ```bash
@@ -43,7 +43,7 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL, -- Armazena o hash da senha
+    password VARCHAR(255) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE,
     is_admin BOOLEAN DEFAULT FALSE
@@ -66,15 +66,11 @@ CREATE TABLE records (
 Edite o arquivo de configuração da aplicação (geralmente em src/config/config.php) e substitua os valores conforme seu ambiente.
 
 ```bash
-PHP
-
-// Exemplo de configurações essenciais no config.php
-
 // Configurações do Banco de Dados (Substitua pelos seus dados)
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'sua_senha_mysql');
-define('DB_NAME', 'innout_db');
+define('DB_NAME', 'innout');
 
 // Configuração de Fuso Horário
 date_default_timezone_set('America/Sao_Paulo'); 
@@ -83,26 +79,24 @@ date_default_timezone_set('America/Sao_Paulo');
 ### 4. Acesso
 Inicie o seu servidor web e acesse o sistema pelo seu navegador.
 
-- Login: http://localhost/in-n-out/login.php
+- Login: http://localhost/innout/login.php
 
-- Home: http://localhost/in-n-out/index.php
+- Home: http://localhost/innout/index.php
 
 # 💻 Telas da Aplicação
-- Tela de Login
-Tela inicial para autenticação de usuários.
+- Tela inicial para autenticação de usuários.
 <img src="./public/assets/images/Login.png" alt="Texto Alternativo">
 
-- Tela de Home
-Tela principal para o registro do ponto e visualização da jornada diária.
+- Tela principal para o registro do ponto e visualização da jornada diária.
 <img src="./public/assets/images/Home.png" alt="Texto Alternativo">
 
 # 🛠️ Tecnologias Utilizadas
-- **Back-end**: PHP (Programação Orientada a Objetos - OO)
+- **Back-end**: PHP
 - **Banco de Dados:** MySQL
 - **Front-end**: HTML e CSS
 
 # 🤝 Contribuições
-Contribuições são bem-vindas! Se você encontrou um bug ou tem sugestões de melhoria (especialmente em segurança), sinta-se à vontade para abrir uma issue ou enviar um Pull Request.
+Contribuições são bem-vindas! Se você encontrou um bug ou tem sugestões de melhoria, sinta-se à vontade para abrir uma issue ou enviar um Pull Request.
 
 1. Faça um Fork do projeto.
 
