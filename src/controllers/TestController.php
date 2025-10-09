@@ -12,3 +12,5 @@ echo "<br>";
 
 $lunchIntervalString = $wh->getLunchInterval()->format('%H:%I:%S');
 print_r($lunchIntervalString);
+
+print_r($wh->getExitTime());
