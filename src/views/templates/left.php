@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="day_records.php">
+                <a href="<?= BASE_URL . '/monthly_report' ?>">
                     <i class="icofont-ui-calendar mr-2"></i>
                     Registrar Mensal
                 </a>

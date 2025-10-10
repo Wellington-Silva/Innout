@@ -1,12 +1,9 @@
 <?php 
 session_start();
+requireValidSession();
 
 $exception = null;
 $message = null; 
-
-requireValidSession();
-
-loadModel('WorkingHours');
 
 $date = new DateTime();
 $formatter = new IntlDateFormatter(
