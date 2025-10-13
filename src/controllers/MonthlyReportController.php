@@ -5,6 +5,7 @@ requireValidSession();
 $currentDate = new DateTime();
 
 $user = $_SESSION['user'];
+$selectedPeriod = $_POST['period'];
 $registries = WorkingHours::getMonthlyReport($user->id, $currentDate);
 
 $report = [];

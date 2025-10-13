@@ -69,3 +69,17 @@ function getTimeStringFromSeconds($seconds) {
     $s = $seconds - ($h * 3600) - ($m * 60);
     return sprintf('%02d:%02d:%02d', $h, $m, $s);
 }
+
+function formatDateWithLocale ($date, $pattern, $locale = 'pt_BR', $timezone = 'America/Sao_Paulo') {
+    $dateTime = getDateAsDateTime($date);
+    $formatter = new IntlDateFormatter(
+        $locale,
+        IntlDateFormatter::FULL, // Estilo de data (FULL, LONG, MEDIUM, SHORT)
+        IntlDateFormatter::FULL, // Estilo de hora (FULL, LONG, MEDIUM, SHORT, NONE)
+        $timezone,
+        IntlDateFormatter::GREGORIAN,
+        $pattern
+    );
+
+    return $formatter->format($dateTime);
+}
