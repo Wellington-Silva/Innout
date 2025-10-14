@@ -2,4 +2,4 @@
 
 // Controller Temporário
 
-print_r(getLastDayOfMonth('2025-10-10'));
+echo User::getCount(['raw' => 'id % 2 = 0']);
