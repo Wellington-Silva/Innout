@@ -90,6 +90,18 @@ Inicie o seu servidor web e acesse o sistema pelo seu navegador.
 - Tela principal para o registro do ponto e visualização da jornada diária.
 <img src="./public/assets/images/Home.png" alt="Texto Alternativo">
 
+- Tela de Relatório Mensal
+<img src="./public/assets/images/Monthly Report.png" alt="Texto Alternativo">
+
+- Tela de Relatório Gerencial
+<img src="./public/assets/images/Manager Report.png" alt="Texto Alternativo">
+
+- Tela de Listagem de usuários
+<img src="./public/assets/images/Users.png" alt="Texto alternativo">
+
+- Tela de Cadastrar e Editar dados dos usuários
+<img src="./public/assets/images/SaveUser.png" alt="Texto Alternativo">
+
 # 🛠️ Tecnologias Utilizadas
 - **Back-end**: PHP
 - **Banco de Dados:** MySQL
