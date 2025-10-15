@@ -13,18 +13,20 @@
                     Registrar Mensal
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="<?= BASE_URL . '/manager_report' ?>">
-                    <i class="icofont-chart-histogram mr-2"></i>
-                    Registrar Gerencial
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?= BASE_URL . '/users' ?>">
-                    <i class="icofont-users mr-2"></i>
-                    Usuários
-                </a>
-            </li>
+            <?php if ($user->is_admin): ?>
+                <li class="nav-item">
+                    <a href="<?= BASE_URL . '/manager_report' ?>">
+                        <i class="icofont-chart-histogram mr-2"></i>
+                        Registrar Gerencial
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= BASE_URL . '/users' ?>">
+                        <i class="icofont-users mr-2"></i>
+                        Usuários
+                    </a>
+                </li>
+            <?php endif ?>
         </ul>
     </nav>
     <div class="sidebar-widgets">
@@ -42,17 +44,17 @@
         </div>
         <div class="division my-3">
             <div class="sidebar-widget">
-            <i class="icon icofont-ui-alarm text-danger"></i>
-            <div class="info">
-                <span class="main text-danger"
-                    <?= $activeClock === 'exitTime' ? 'active-clock' : '' ?>>
-                    <?= $exitTime ?>
-                </span>
-                <span class="label text-muted">
-                    Hora de saída
-                </span>
+                <i class="icon icofont-ui-alarm text-danger"></i>
+                <div class="info">
+                    <span class="main text-danger"
+                        <?= $activeClock === 'exitTime' ? 'active-clock' : '' ?>>
+                        <?= $exitTime ?>
+                    </span>
+                    <span class="label text-muted">
+                        Hora de saída
+                    </span>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </aside>
