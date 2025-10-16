@@ -2,15 +2,14 @@
 require_once(dirname(__FILE__, 2) . '/src/config/config.php');
 
 // Define a rota URI a partir do REQUEST_URI
-// 1. Obtém o caminho da URL (ex: /innout/public/day_records)
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); 
 
-// 2. Remove o BASE_URL da URL (ex: /day_records)
+// Remove o BASE_URL da URL (ex: /day_records)
 if (strpos($uri, BASE_URL) === 0) {
     $uri = substr($uri, strlen(BASE_URL));
 }
 
-// 3. Limpa o URI (ex: day_records)
+// Limpa o URI (ex: day_records)
 $uri = trim($uri, '/'); 
 
 

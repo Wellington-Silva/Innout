@@ -8,7 +8,7 @@ $email = '';
 
 if (count($_POST) > 0) {
     $login = new Login($_POST);
-    $email = $_POST['email']; // pra manter o campo preenchido
+    $email = $_POST['email']; // Para manter o campo preenchido
 
     try {
         $user = $login->checkLogin();
